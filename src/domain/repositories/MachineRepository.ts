@@ -9,13 +9,18 @@ class MachineRepository {
             price: dataMachine.price,
             description: dataMachine.description
         })
-       
+
         try {
             await machine.save();
-            return true;   
+            return true;
         } catch (error) {
             return false;
         }
+    }
+
+    async read() {
+        const allmachines = await machineModel.find();
+        return allmachines;
     }
 }
 
