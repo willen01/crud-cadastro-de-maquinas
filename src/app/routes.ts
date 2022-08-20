@@ -4,7 +4,7 @@ import UserController from "../domain/controllers/UserController";
 const router = Router();
 
 //cadastro
-router.get("/register", UserController.register);
+router.post("/register", UserController.register);
 
 
 export { router };
