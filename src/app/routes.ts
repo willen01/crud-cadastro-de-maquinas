@@ -6,5 +6,7 @@ const router = Router();
 //cadastro
 router.post("/register", UserController.register);
 
+//leitura de cadastro
+router.get("/machines", UserController.read);
 
 export { router };
