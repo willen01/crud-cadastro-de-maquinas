@@ -1,8 +1,14 @@
 import { Request, Response } from "express";
+import MachineRepository from "../repositories/MachineRepository";
 
 export class UserController {
-    register(req: Request, res: Response){
-        res.json();
+    async register(req: Request, res: Response){
+        const createMachine = await MachineRepository.create(req.body);
+        if(createMachine){
+            res.status(201).send();
+        } else {
+            res.status(400).send();
+        }
     }
 }
 
