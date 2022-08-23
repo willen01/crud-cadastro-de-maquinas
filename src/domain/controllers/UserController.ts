@@ -31,6 +31,22 @@ export class UserController {
       res.status(400).json({ msg: "maquina não encontrada" });
     }
   }
+
+  async update(req: Request, res: Response) {
+    const idMachine = req.params.id;
+    const { name, code, price, description } = req.body;
+    const newDataMachine = { name, code, price, description };
+    const machineFound = await MachineRepository.update(
+      idMachine,
+      newDataMachine
+    );
+
+    if (machineFound) {
+      res.status(200).json(machineFound);
+    } else {
+      res.status(400).json({ msg: "Erro ao atualizar cadastro" });
+    }
+  }
 }
 
 export default new UserController();

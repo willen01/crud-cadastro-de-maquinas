@@ -27,6 +27,14 @@ class MachineRepository {
     const searchMachineById = await machineModel.findById(id);
     return searchMachineById;
   }
+
+  async update(id: string, newData: any) {
+    const searchMachineById = await machineModel.findByIdAndUpdate(
+      { _id: id },
+      newData
+    );
+    return searchMachineById;
+  }
 }
 
 export default new MachineRepository();
