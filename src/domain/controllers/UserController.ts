@@ -47,6 +47,17 @@ export class UserController {
       res.status(400).json({ msg: "Erro ao atualizar cadastro" });
     }
   }
+
+  async delete(req: Request, res: Response) {
+    const findMachine = req.params.id;
+    const machineDeleted = await MachineRepository.delete(findMachine);
+
+    if (machineDeleted) {
+      res.status(200).json({ msg: "Cadastro deletado" });
+    } else {
+      res.status(400).json({ msg: "Erro ao remover cadastro" });
+    }
+  }
 }
 
 export default new UserController();

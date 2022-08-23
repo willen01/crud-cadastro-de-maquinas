@@ -15,4 +15,7 @@ router.get("/machines/:id", UserController.readOne);
 //atualiza cadastro
 router.patch("/machines/:id", UserController.update);
 
+//Deleta item
+router.delete("/machines/:id", UserController.delete);
+
 export { router };

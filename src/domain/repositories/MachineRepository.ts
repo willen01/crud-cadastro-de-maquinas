@@ -35,6 +35,11 @@ class MachineRepository {
     );
     return searchMachineById;
   }
+
+  async delete(id: string) {
+    const machine = await machineModel.findByIdAndDelete({ _id: id });
+    return machine;
+  }
 }
 
 export default new MachineRepository();
