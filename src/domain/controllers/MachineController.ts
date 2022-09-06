@@ -5,9 +5,9 @@ export class UserController {
   async register(req: Request, res: Response) {
     const createMachine = await MachineRepository.create(req.body);
     if (createMachine) {
-      res.status(201).send();
+      res.status(201).json({ msg: "Produto cadastrado com sucesso" });
     } else {
-      res.status(400).send();
+      res.status(400).send({ msg: "Erro ao cadastrar produto" });
     }
   }
 
