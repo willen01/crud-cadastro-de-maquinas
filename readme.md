@@ -1,8 +1,8 @@
 # Gerênciamento de máquinas.
 
-Aplicação backend construida em <a href="http://nodejs.org">Node.js</a> com <a href="https://www.typescriptlang.org/">Typescript</a>, para gerênciamento de máquinas em geral. O banco de dados escolhido para persistência de dados da aplicação foi o <a href="https://www.mongodb.com/pt-br">Mongodb</a>, e possui os seguintes campos de inserção: **name (nome da máquina), code (código de identificação), price (preço da maquina), description (descriçã da máqina);**. Neste projeto é possível realizar todas as operações que caracterizam uma aplicação crud - create, read, update delete.
+Aplicação backend construida em <a href="http://nodejs.org">Node.js</a> com <a href="https://www.typescriptlang.org/">Typescript</a>, para gerênciamento de máquinas em geral. O banco de dados escolhido para persistência de dados da aplicação foi o <a href="https://www.mongodb.com/pt-br">Mongodb</a>, e possui os seguintes campos de inserção: **name (nome da máquina), code (código de identificação), price (preço da maquina), description (descrição da máqina)**. Neste projeto é possível realizar todas as operações que caracterizam uma aplicação crud - create, read, update delete.
 
-## Teconogias utilizadas
+## Tecnologias utilizadas
 
 - JavaScript
 - Typescrip
@@ -20,10 +20,10 @@ Para rodar esta aplicação localmente, clone este repositório execute o comand
 DB_URL_CONNECTION= mongodb://localhost/meudb
 PORT=3000
 ```
-
+Após isso, execute o comando `yarn start` e aguarde a aplicação iniciar.
 ## Endpoints de conexão
 
-Ao fazer requisições com com seu rest client, use os seguintes endpoints com suas respectivas rotas:
+Ao executar as requisições com seu rest client, use os seguintes endpoints com suas respectivas rotas:
 | endpoint | verbo HTTP | Descrição |
 |------|------------|-----------|
 | /register | POST | Cadastra uma nova máquina|
