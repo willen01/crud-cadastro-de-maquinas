@@ -14,7 +14,7 @@ Aplicação backend construida em <a href="http://nodejs.org">Node.js</a> com <a
 
 ## Iniciando aplicação
 
-Para rodar esta aplicação localmente, clone este repositório execute o comando `yarn init`, renomeie o arquivo `.env.example` para `.env` e defina o endereço de conexão com seu mongodb e a porta de conexão com o servidor, exemplo:
+Para rodar esta aplicação localmente, clone este repositório execute o comando `yarn install`, renomeie o arquivo `.env.example` para `.env` e defina o endereço de conexão com seu mongodb e a porta de conexão com o servidor, exemplo:
 
 ```
 DB_URL_CONNECTION= mongodb://localhost/meudb
