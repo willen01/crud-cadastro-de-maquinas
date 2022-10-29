@@ -1,8 +1,9 @@
 import { Machine } from "../entities/machine";
+import { IMachine } from "../protocols/machine";
 import machineModel from "./DbModels";
 
-class MachineRepository {
-  async create(dataMachine: Machine) {
+export class MachineRepository implements IMachine {
+  async create(dataMachine: Machine): Promise<void> {
     const machine = new machineModel({
       name: dataMachine.name,
       code: dataMachine.code,
@@ -10,36 +11,31 @@ class MachineRepository {
       description: dataMachine.description,
     });
 
-    try {
-      await machine.save();
-      return true;
-    } catch (error) {
-      return false;
-    }
+    await machine.save();
   }
 
-  async read() {
+  async list(): Promise<Machine[]> {
     const allmachines = await machineModel.find();
     return allmachines;
   }
 
-  async readOne(id: string) {
+  async listOne(id: string): Promise<Machine | null> {
     const searchMachineById = await machineModel.findById(id);
     return searchMachineById;
   }
 
-  async update(id: string, newData: any) {
+  async update(id: string, newMachine: Machine): Promise<Machine | null> {
     const searchMachineById = await machineModel.findByIdAndUpdate(
       { _id: id },
-      newData
+      newMachine
     );
     return searchMachineById;
   }
 
-  async delete(id: string) {
+  async delete(id: string): Promise<Machine | null> {
     const machine = await machineModel.findByIdAndDelete({ _id: id });
     return machine;
   }
 }
 
-export default new MachineRepository();
+// export default new MachineRepository();
